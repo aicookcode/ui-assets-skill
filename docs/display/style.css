@@ -1,0 +1,535 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  min-height: 100%;
+  background: #f4f0e9;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #f4f0e9;
+  font-family: "Microsoft YaHei",sans-serif;
+  color: #080a09;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+button:focus-visible {
+  outline: 2px solid #34765c;
+  outline-offset: 3px;
+}
+
+.screen {
+  position: relative;
+  width: min(100vw,462px);
+  margin: 0 auto;
+  overflow: hidden;
+  background: #faf7f0;
+}
+
+.home {
+  position: relative;
+  width: 462px;
+  min-height: 928px;
+  transform-origin: top left;
+  background: radial-gradient(ellipse at 47% 52%,#fffcf7 0,#f9f7f1 44%,#f3efe8 100%);
+}
+
+.art {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 462px;
+  height: 194px;
+}
+
+.hero h1 {
+  position: absolute;
+  left: 24px;
+  top: 15px;
+  font-family: KaiTi,"楷体",serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  position: absolute;
+  left: 27px;
+  top: 68px;
+  font-family: KaiTi,"楷体",serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #66665f;
+}
+
+.stats {
+  position: absolute;
+  left: 13px;
+  top: 194px;
+  width: 439px;
+  height: 87px;
+  border-radius: 20px;
+  background: #fefbf7;
+  box-shadow: none;
+}
+
+.stat-icon {
+  position: absolute;
+  display: block;
+}
+
+.calendar {
+  left: 15px;
+  top: 25px;
+}
+
+.trophy {
+  left: 154px;
+  top: 25px;
+}
+
+.energy {
+  left: 306px;
+  top: 26px;
+}
+
+.stat {
+  position: absolute;
+  top: 22px;
+  white-space: nowrap;
+}
+
+.stat>span {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  color: #61605b;
+}
+
+.stat p {
+  font-size: 14px;
+  line-height: 25px;
+  color: #111;
+}
+
+.stat b {
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.challenge {
+  left: 54px;
+}
+
+.win {
+  left: 195px;
+}
+
+.power {
+  left: 336px;
+}
+
+.divider {
+  position: absolute;
+  top: 30px;
+  height: 30px;
+  width: 1px;
+  background: #f2e9dc;
+}
+
+.divider.one {
+  left: 135px;
+}
+
+.divider.two {
+  left: 284px;
+}
+
+.add {
+  position: absolute;
+  left: 403px;
+  top: 28px;
+  width: 29px;
+  height: 29px;
+  border-radius: 0;
+  background: none;
+}
+
+.add span {
+  position: absolute;
+  background: #fff;
+  left: 6px;
+  top: 12px;
+  width: 13px;
+  height: 1px;
+}
+
+.add span+span {
+  transform: rotate(90deg);
+}
+
+.poem {
+  position: absolute;
+  left: 14px;
+  top: 294px;
+  width: 438px;
+  height: 210px;
+  overflow: hidden;
+  border-radius: 17px;
+}
+
+.poem h2 {
+  position: absolute;
+  left: 51px;
+  top: 14px;
+  font-family: KaiTi,"楷体",serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: .8px;
+}
+
+.poem time {
+  position: absolute;
+  left: 329px;
+  top: 20px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #8d847b;
+}
+
+.refresh {
+  position: absolute;
+  left: 397px;
+  top: 15px;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+}
+
+.verse {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 53px;
+  text-align: center;
+  white-space: nowrap;
+  font-family: KaiTi,"楷体",serif;
+  font-size: 25px;
+  line-height: 38px;
+  letter-spacing: .1px;
+  padding-left: 13px;
+}
+
+.attribution {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 98px;
+  text-align: center;
+  font-family: KaiTi,"楷体",serif;
+  font-size: 16.4px;
+  line-height: 26px;
+  color: #8b8880;
+}
+
+.lesson {
+  position: absolute;
+  left: 14px;
+  top: 518px;
+  width: 438px;
+  height: 141px;
+  border: 1px solid #eee4d4;
+  border-radius: 17px;
+  background: #fdf9f2;
+  box-shadow: none;
+  border-color: #f0ebdf;
+}
+
+.lesson .book {
+  position: absolute;
+  left: 14px;
+  top: 15px;
+}
+
+.lesson h2 {
+  position: absolute;
+  left: 58px;
+  top: 13px;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: .1px;
+}
+
+.course {
+  position: absolute;
+  left: 21px;
+  top: 54px;
+  font-family: KaiTi,"楷体",serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -.5px;
+}
+
+.completed {
+  position: absolute;
+  left: 21px;
+  top: 85px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #74716b;
+}
+
+.progress {
+  position: absolute;
+  left: 22px;
+  top: 115px;
+  width: 232px;
+  height: 9px;
+  border-radius: 10px;
+  background: #eaebe4;
+  overflow: hidden;
+  box-shadow: 0 -1px 0 #fbfef9,0 1px 0 #fdfffc;
+}
+
+.progress span {
+  display: block;
+  width: 54%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(to bottom,#79a88e 0px,#79a88e 1px,#26754d 1px,#26754d 2px,#34835a 2px,#34835a 3px,#318155 3px,#318155 4px,#328356 4px,#328356 5px,#318257 5px,#318257 6px,#328557 6px,#328557 7px,#29774d 7px,#29774d 8px,#8cb8a2 8px,#8cb8a2 9px);
+}
+
+.continue {
+  position: absolute;
+  left: 284px;
+  top: 51px;
+  width: 140px;
+  height: 69px;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 55px;
+  background-size: 140px 69px;
+}
+
+.continue span {
+  margin-right: 12px;
+  position: absolute;
+  left: 26px;
+  top: 4px;
+  white-space: nowrap;
+  margin: 0;
+  font-size: 17px;
+}
+
+.chevron {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 25px;
+  top: 22px;
+}
+
+.entry {
+  position: absolute;
+  top: 674px;
+  height: 165px;
+  text-align: left;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.quiz {
+  left: 15px;
+  width: 209px;
+}
+
+.flower {
+  left: 239px;
+  width: 212px;
+}
+
+.entry strong {
+  position: absolute;
+  left: 21px;
+  top: 18px;
+  font-family: KaiTi,"楷体",serif;
+  font-size: 23px;
+  line-height: 32px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.entry>span {
+  position: absolute;
+  left: 21px;
+  top: 54px;
+  font-family: KaiTi,"楷体",serif;
+  font-size: 17px;
+  line-height: 24px;
+  color: #878078;
+}
+
+.flower strong {
+  left: 18px;
+  font-size: 23px;
+}
+
+.flower>span {
+  left: 18px;
+  font-size: 16px;
+}
+
+.tabs {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 462px;
+  height: 76px;
+  background: linear-gradient(to bottom,#fefbf8,#fdfcf9);
+  border-top: 1px solid #f4efe7;
+  display: flex;
+  border-top-color: #f8f8f3;
+}
+
+.tab {
+  position: relative;
+  flex: 1;
+  height: 76px;
+  color: #77736d;
+}
+
+.tab img {
+  position: absolute;
+  top: 7px;
+  left: calc(50% - 15px);
+}
+
+.tab span {
+  position: absolute;
+  top: 39px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.tab.active {
+  color: #34725a;
+}
+
+.toast {
+  position: absolute;
+  left: 45px;
+  right: 45px;
+  bottom: 100px;
+  border-radius: 12px;
+  background: #284737ee;
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s;
+  font-size: 17px;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+.tab:first-child img {
+  left: 103px;
+  top: 6px;
+}
+
+.tab:nth-child(2) img {
+  left: 100px;
+  top: 7px;
+}
+
+.tab:first-child span {
+  padding-left: 4px;
+}
+
+.tab:nth-child(2) span {
+  padding-right: 4px;
+}
+
+.add img {
+  display: block;
+  width: 29px;
+  height: 29px;
+}
+/* Reflowable components; decorative images never determine controls or page-module positions. */
+.home{display:flex;flex-direction:column;background:#f9f6f0}
+.hero{position:relative;left:auto;top:auto;flex:0 0 194px}
+.stats{position:relative;left:auto;top:auto;margin-left:13px;flex:0 0 87px;box-shadow:0 5px 15px #8a73500b}
+.add{left:405px;top:31px;width:25px;height:25px;border-radius:50%;background:linear-gradient(135deg,#4a8a6b,#2a6e51)}
+.add:before,.add:after{content:"";position:absolute;width:13px;height:1.3px;background:white;left:6px;top:11.8px}.add:after{transform:rotate(90deg)}
+.poem{position:relative;left:auto;top:auto;min-height:210px;height:210px;flex:none;margin:13px 0 0 14px;border:1px solid #eee6da;background:#fdfaf4;box-shadow:0 3px 9px #8a735008}
+.poem .poem-art{left:1px;right:auto;top:auto;bottom:1px;width:434px;height:165px}
+.poem-symbol{position:absolute;left:14px;top:15px}.poem h2{left:50px;top:13px}.poem time{left:328px;top:19px}.verse{top:52px}.attribution{top:97px}
+.refresh{left:399px;top:14px;width:26px;height:26px;background:#cbbfaf;color:white;display:grid;place-items:center}.refresh svg{width:20px;height:20px}
+.lesson{position:relative;left:auto;top:auto;margin:14px 0 0 14px;flex:0 0 141px;box-shadow:0 5px 9px #8f71450b}
+.continue{left:287px;top:55px;width:132px;height:55px;border-radius:29px;background:radial-gradient(ellipse at 12% 0%,#91a68a 0%,transparent 72%),linear-gradient(105deg,#62876b,#326f53 74%,#377957);box-shadow:0 4px 8px #3155351c,inset 1px 2px 1px #cad7c78c}
+.continue span{left:23px;top:0}.continue .control-arrow{position:absolute;left:104px;top:20px}
+.entries{display:grid;grid-template-columns:209px 212px;gap:15px;width:436px;margin:15px 0 0 15px;flex:none}
+.entry{position:relative;left:auto;top:auto;display:flex;flex-direction:column;min-height:165px;height:auto;width:auto;padding:18px 21px 23px;isolation:isolate;align-items:flex-start}
+.entry .art{top:auto;bottom:0;height:auto;z-index:-1}.entry strong{position:relative;left:auto;top:auto;flex:none}.entry>span[data-text]{position:relative;left:auto;top:auto;margin-top:4px;flex:none}.flower{padding-left:18px}
+.entry .entry-action{position:relative;left:auto;top:auto;display:grid;place-items:center;width:28px;height:28px;margin-top:12px;flex:none;border-radius:50%;background:linear-gradient(125deg,#de8754,#cb6130);color:white;z-index:1}
+.quiz .entry-action{margin-left:-1px}.flower .entry-action{background:linear-gradient(130deg,#d8a2a2,#bf7e83)}
+.entry-action img{display:block;width:8px;height:14px}.tabs{position:relative;bottom:auto;flex:0 0 76px;margin-top:auto}
+.entry{overflow:hidden;border-radius:15px;background:linear-gradient(135deg,#fff0da,#f6e5cd);text-align:left}
+.flower{background:linear-gradient(135deg,#fce8e5,#f7e4df)}
+.entry strong{white-space:normal;width:100%}
+.entry .art{inset:auto 0 0 auto;width:auto;min-width:0;height:auto}
+.poem{height:auto}
+.verse{position:relative;top:auto;margin-top:52px;white-space:normal}
+.attribution{position:relative;top:auto;margin-top:7px;padding-bottom:85px}

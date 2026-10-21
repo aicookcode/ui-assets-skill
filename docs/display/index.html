@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>诗词挑战者 · 首页</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="surface.css">
+</head>
+<body>
+  <div class="screen" id="screen">
+    <main class="home" id="home" aria-label="诗词挑战者首页">
+      <div class="paper-surface" aria-hidden="true"></div>
+      <header class="hero" data-region="hero">
+        <h1 data-text="title">诗词挑战者</h1>
+        <p data-text="subtitle">以诗会友 · 在诗词中遇见更好的自己</p>
+      </header>
+
+      <section class="stats" aria-label="今日学习概况" data-region="stats">
+        <img class="stat-icon calendar" src="assets/icon-001.png" alt="" width="25" height="27">
+        <div class="stat challenge"><span data-text="challenge-label">今日挑战</span><p data-text="challenge-value"><b>2</b> / <b>10</b> 次</p></div>
+        <i class="divider one"></i>
+        <img class="stat-icon trophy" src="assets/icon-002.png" alt="" width="29" height="29">
+        <div class="stat win"><span data-text="win-label">挑战成功率</span><p data-text="win-value"><b>70%</b></p></div>
+        <i class="divider two"></i>
+        <img class="stat-icon energy" src="assets/icon-003.svg" alt="" width="18.4375" height="28.125">
+        <div class="stat power"><span data-text="energy-label">能量</span><p data-text="energy-value"><b id="energy">20</b> / 30</p></div>
+        <button class="add" id="add-energy" aria-label="补充能量"><img src="assets/icon-010.svg" alt="" width="11.375" height="11.375"></button>
+      </section>
+
+      <section class="poem" aria-labelledby="poem-title" data-region="poem-card">
+        <img class="art poem-art" src="assets/art-001.png" alt="群山与泛舟" width="435" height="117">
+        <img class="poem-symbol" src="assets/icon-004.svg" alt="" width="22.5" height="22.4375">
+        <h2 id="poem-title" data-text="poem-label">每日诗句</h2>
+        <time datetime="2026-10-15" data-text="date">10月15日</time>
+        <button id="refresh-poem" class="refresh" aria-label="刷新每日诗句"><img src="assets/icon-005.svg" alt="" width="16.125" height="15.5625"></button>
+        <p class="verse" id="verse" data-text="verse">海内存知己，天涯若比邻。</p>
+        <p class="attribution" data-text="author">— 王勃《送杜少府之任蜀州》</p>
+      </section>
+
+      <section class="lesson" aria-labelledby="lesson-title" data-region="lesson">
+        <img class="book" src="assets/icon-006.png" alt="" width="28" height="22">
+        <h2 id="lesson-title" data-text="lesson-label">继续上次的诗课</h2>
+        <p class="course" data-text="course">进阶 · 山水田园诗</p>
+        <p class="completed" data-text="completed">已完成 <span id="completed">6</span> / 10 题</p>
+        <div class="progress" role="progressbar" aria-label="诗课完成进度" aria-valuemin="0" aria-valuemax="10" aria-valuenow="6"><span></span></div>
+        <button class="continue" id="continue"><span data-text="continue">继续练习</span><img class="control-arrow" src="assets/icon-009.svg" alt="" width="7.375" height="14.375"></button>
+      </section>
+
+      <div class="entries">
+      <button class="entry quiz" id="quiz" data-region="quiz-card" aria-label="开始答题，选择等级与模式，开启诗词挑战">
+        <img class="art" src="assets/art-002.png" alt="古卷与毛笔" width="208" height="164">
+        <strong data-text="quiz-title">开始答题</strong>
+        <span data-text="quiz-copy">选择等级与模式<br>开启诗词挑战</span>
+        <span class="entry-action" aria-hidden="true"><img src="assets/icon-009.svg" alt="" width="7.375" height="14.375"></span>
+      </button>
+      <button class="entry flower" id="flower" data-region="flower-card" aria-label="飞花令，以诗会友，看谁更博学">
+        <img class="art" src="assets/art-003.png" alt="折扇与桃花" width="211" height="164">
+        <strong data-text="flower-title">飞花令</strong>
+        <span data-text="flower-copy">以诗会友<br>看谁更博学</span>
+        <span class="entry-action" aria-hidden="true"><img src="assets/icon-009.svg" alt="" width="7.375" height="14.375"></span>
+      </button>
+      </div>
+
+      <nav class="tabs" aria-label="底部导航" data-region="navigation">
+        <button class="tab active" id="home-tab" aria-current="page"><img src="assets/icon-007.svg" alt="" width="26.0625" height="26.25"><span data-text="home-tab">首页</span></button>
+        <button class="tab" id="profile-tab"><img src="assets/icon-008.svg" alt="" width="22.875" height="24.125"><span data-text="profile-tab">我的</span></button>
+      </nav>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

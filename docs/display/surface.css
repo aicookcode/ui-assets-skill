@@ -1,0 +1,15 @@
+
+.paper-surface{position:absolute;inset:0;pointer-events:none;background:#f8f5ef url("assets/bg-001.png") center top / 462px 854px no-repeat}
+.home{background:#f8f5ef}
+.stats,.poem,.lesson,.entries,.tabs,.hero{z-index:1}
+.poem .poem-art{left:0;bottom:0;width:100%;height:auto}
+.poem{background:#fdfaf4}
+.add:before,.add:after{display:none}
+.add{display:grid;place-items:center}
+.add img{width:11.375px;height:11.375px}
+.refresh img{width:16.125px;height:15.5625px}
+.stat-icon{width:auto;height:auto}
+.book,.poem-symbol{width:auto;height:auto}
+.tab img{width:auto;height:auto;left:50%!important;transform:translateX(-50%);top:9px!important}
+.entry-action img,.continue .control-arrow{width:7.375px;height:14.375px}
+.progress span{width:60%}

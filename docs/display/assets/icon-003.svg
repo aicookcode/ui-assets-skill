@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="18.43750000" height="28.12500000" viewBox="2.50000000 2.50000000 18.43750000 28.12500000"><defs><linearGradient id="bolt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#34b7b7" /><stop offset="1" stop-color="#2fafae" /></linearGradient></defs><path d="M8.3 2.8H18Q19.2 2.8 18.7 4.1L15.5 13.2H19.6Q21 13.2 20.5 14.8L7.4 29.8Q6.4 31 6.9 29.5L10 19.5H3.4Q2.5 19.5 2.9 18.3L6.6 4.1Q7 2.8 8.3 2.8Z" fill="url(#bolt)" stroke="#33adad" stroke-width=".5" stroke-linejoin="round" /></svg>

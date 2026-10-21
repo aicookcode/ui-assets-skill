@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+output/
+.pytest_cache/
+docs/prd.md
+docs/constructor.md

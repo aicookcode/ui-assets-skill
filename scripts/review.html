@@ -1,0 +1,38 @@
+<section id="asset-review" aria-label="素材选择审核">
+<style>
+#asset-review{font:15px/1.6 system-ui,sans-serif;color:var(--foreground,#243b32);background:var(--background,#f6f7f4);padding:20px;box-sizing:border-box;max-width:980px;margin:auto}
+#asset-review *{box-sizing:border-box}#asset-review header{padding-right:90px}#asset-review h2{margin:0 0 8px;font-size:22px}#asset-review .toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0}
+#asset-review button,#asset-review select,#asset-review textarea{font:inherit;color:inherit;background:var(--card,#fff);border:1px solid var(--border,#cbd7cf);border-radius:8px;padding:9px 12px;max-width:100%}
+#asset-review button{cursor:pointer}#asset-review button:disabled{opacity:.55;cursor:default}#asset-review .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:14px}
+#asset-review .item{display:flex;flex-direction:column;background:var(--card,#fff);border:1px solid var(--border,#cbd7cf);border-radius:12px;padding:12px;gap:9px;overflow-wrap:anywhere}
+#asset-review .item label{display:flex;gap:9px;align-items:center;min-height:44px;cursor:pointer}#asset-review input{width:20px;height:20px;flex-shrink:0;accent-color:var(--primary,#347359)}#asset-review img{width:100%;height:170px;object-fit:contain;background:var(--muted,#f1eee7)}
+#asset-review .meta{font-size:13px}#asset-review textarea{display:block;width:100%;min-height:88px;margin:8px 0}#asset-review footer{margin-top:18px}#asset-review .primary{background:var(--primary,#347359);color:var(--primary-foreground,#fff)}#asset-review .status{min-height:24px}#asset-review .error{color:var(--destructive,#a52929)}
+</style>
+<header><h2>选择要导出的素材</h2><div>原图裁切预览 · <span data-revision></span></div></header>
+<div class="toolbar"><button type="button" data-all>全选</button><button type="button" data-none>取消全选</button><label>按类别选择 <select data-category><option value="">选择类别</option></select></label><output data-count aria-live="polite"></output></div>
+<div class="grid" data-items></div>
+<footer><label for="asset-review-feedback">拆分、边界、格式或尺寸修改意见</label><textarea id="asset-review-feedback" placeholder="可填写需要合并、拆分或修改的素材及要求"></textarea><div class="toolbar"><button class="primary" type="button" data-submit>确认所选并提交</button></div><p class="status" data-status role="status" aria-live="polite"></p></footer>
+</section>
+<script type="application/json" id="asset-review-data">__REVIEW_DATA__</script>
+<script>
+(()=>{
+const root=document.getElementById('asset-review');
+const data=JSON.parse(document.getElementById('asset-review-data').textContent);
+const selected=new Set(data.assets.filter(a=>a.selected).map(a=>a.id));
+const checks=new Map();const list=root.querySelector('[data-items]');
+const status=root.querySelector('[data-status]');const feedback=root.querySelector('textarea');
+feedback.value=data.feedback||'';
+const key=data.project_id+':'+data.review_token;
+const hostState=window.openai?.widgetState;
+if(hostState?.modelContent?.key===key){const saved=hostState.modelContent;selected.clear();for(const id of saved.selected_ids||[])if(data.assets.some(a=>a.id===id))selected.add(id);feedback.value=saved.feedback||'';}
+const update=(save=true)=>{for(const [id,c]of checks)c.checked=selected.has(id);root.querySelector('[data-count]').textContent='已选 '+selected.size+' / '+data.assets.length+' 项';if(save&&window.openai?.setWidgetState)Promise.resolve(window.openai.setWidgetState({modelContent:{key,selected_ids:[...selected],feedback:feedback.value}})).catch(()=>{});};
+const methods={crop:'原图裁切',reuse:'复用原素材',vector:'矢量重建',repair:'局部修复',generate:'参考生成'};
+for(const a of data.assets){const card=document.createElement('article');card.className='item';const label=document.createElement('label');const check=document.createElement('input');check.type='checkbox';check.value=a.id;check.checked=selected.has(a.id);check.addEventListener('change',()=>{if(check.checked)selected.add(a.id);else selected.delete(a.id);update();});checks.set(a.id,check);const title=document.createElement('span');title.textContent=a.name+' · '+a.id;label.append(check,title);const img=document.createElement('img');img.src=a.preview;img.alt=a.name+' 原图局部预览';const meta=document.createElement('div');meta.className='meta';meta.textContent=[a.page,a.category,a.format.toUpperCase(),methods[a.method]||a.method,(a.size||[a.box[2]-a.box[0],a.box[3]-a.box[1]]).join(' × ')].join(' · ');const decision=document.createElement('div');decision.className='meta';decision.textContent=a.composition?.decision||'缺少处理分析，执行前必须补全';card.append(label,img,meta,decision);list.append(card);}
+const category=root.querySelector('select');for(const c of new Set(data.assets.map(a=>a.category))){const o=document.createElement('option');o.value=c;o.textContent=c;category.append(o);}category.onchange=()=>{if(category.value){for(const a of data.assets)if(a.category===category.value)selected.add(a.id);update();category.value='';}};
+root.querySelector('[data-all]').onclick=()=>{data.assets.forEach(a=>selected.add(a.id));update();};root.querySelector('[data-none]').onclick=()=>{selected.clear();update();};feedback.oninput=()=>update();
+root.querySelector('[data-revision]').textContent='清单版本 '+data.manifest_revision;
+if(window.openai?.sendFollowUpMessage)status.textContent='勾选后点击提交；修改意见会先进入清单修订。';else status.textContent='本地审核：提交后保存选择文件，由执行器导入；当前页面不会直接启动生成。';
+root.querySelector('[data-submit]').onclick=async()=>{status.classList.remove('error');if(!selected.size&&!feedback.value.trim()){status.textContent='请至少勾选一项，或填写修改意见。';status.classList.add('error');return;}const submission={action:'confirm-selection',project_id:data.project_id,manifest_revision:data.manifest_revision,review_token:data.review_token,selected_ids:[...selected],feedback:feedback.value.trim(),confirmation:{source:'interactive_submission',text:'Confirmed selected assets: '+[...selected].join(',')+(feedback.value.trim()?' / Changes: '+feedback.value.trim():''),message_ref:'checkbox:'+data.review_token}} ;const button=root.querySelector('[data-submit]');button.disabled=true;try{if(window.openai?.sendFollowUpMessage){await window.openai.sendFollowUpMessage({prompt:'请导入以下素材审核选择。先校验项目、清单版本和 review_token；有修改意见时先更新清单并重新审核，不要直接生成。\n'+JSON.stringify(submission),title:'提交素材选择'});status.textContent='选择已发送至会话，等待执行器校验。';}else{const url=URL.createObjectURL(new Blob([JSON.stringify(submission,null,2)],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download='asset-selection.json';root.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent='已请求保存选择文件；需导入执行器后才能生效。';}}catch(e){status.textContent='提交未完成，勾选已保留，请重试。';status.classList.add('error');}finally{button.disabled=false;}};
+window.addEventListener('openai:set_globals',e=>{const s=e.detail?.globals?.widgetState?.modelContent;if(s?.key===key){selected.clear();for(const id of s.selected_ids||[])if(checks.has(id))selected.add(id);feedback.value=s.feedback||'';update(false);}});update(false);
+})();
+</script>

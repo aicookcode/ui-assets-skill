@@ -1,0 +1,4 @@
+interface:
+  display_name: "ui-assets-skill"
+  short_description: "从描述或设计图识别、审核并导出独立素材，支持透明图、九宫格、版本恢复和 ZIP 交付"
+  default_prompt: "使用 $ui-assets-skill 根据我的描述或设计图生成设计，识别并审核切图清单，导出可用的独立素材。"

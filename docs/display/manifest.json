@@ -1,0 +1,361 @@
+{
+  "assets": [
+    {
+      "id": "bg-001",
+      "name": "首页完整山水桃花底图",
+      "file": "home/background/bg-001.png",
+      "format": "png",
+      "size": [
+        462,
+        854
+      ],
+      "source_box": [
+        34,
+        62,
+        496,
+        916
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "adaptation": {
+        "anchor": "top-center",
+        "scale": "keep-aspect-ratio",
+        "extension_color": "#f8f5ef",
+        "safe_crop": "Original upper 170px scenery protected; lower paper field has no UI module surfaces."
+      },
+      "sha256": "f8c62ff962715621c7bb4ad1a09b89dca20131bcee29a029e171b99468501034",
+      "revision": "clean-module-surfaces"
+    },
+    {
+      "id": "art-001",
+      "name": "每日诗句山水装饰",
+      "file": "home/illustration/art-001.png",
+      "format": "png",
+      "size": [
+        435,
+        117
+      ],
+      "source_box": [
+        49,
+        449,
+        484,
+        566
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "adaptation": {
+        "anchor": "bottom-center",
+        "scale": "keep-aspect-ratio",
+        "container_rounding": "code"
+      },
+      "sha256": "9b058020e925dc1631aff83b3c9f189f7672a241774a6ac75e2ca7aa1858d62a"
+    },
+    {
+      "id": "art-002",
+      "name": "开始答题卷轴插画",
+      "file": "home/illustration/art-002.png",
+      "format": "png",
+      "size": [
+        208,
+        164
+      ],
+      "source_box": [
+        49,
+        739,
+        257,
+        903
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "adaptation": {
+        "anchor": "bottom-right",
+        "scale": "keep-aspect-ratio",
+        "container_rounding": "code"
+      },
+      "sha256": "8ef18d3a67571200e3c1e16134203a11b9a5c53c79b95d508752715aea89c7b4"
+    },
+    {
+      "id": "art-003",
+      "name": "飞花令折扇插画",
+      "file": "home/illustration/art-003.png",
+      "format": "png",
+      "size": [
+        211,
+        164
+      ],
+      "source_box": [
+        273,
+        739,
+        484,
+        903
+      ],
+      "trim_offset": [
+        0,
+        0
+      ],
+      "adaptation": {
+        "anchor": "bottom-right",
+        "scale": "keep-aspect-ratio",
+        "container_rounding": "code"
+      },
+      "sha256": "a672c862e22aa399ef0cfcfb6dfe65405c3b49bbe540d9d3635fe42f3bcdf820"
+    },
+    {
+      "id": "icon-001",
+      "name": "今日挑战日历",
+      "file": "home/icon/icon-001.png",
+      "format": "png",
+      "size": [
+        25,
+        27
+      ],
+      "source_box": [
+        61,
+        285,
+        89,
+        315
+      ],
+      "trim_offset": [
+        1,
+        1
+      ],
+      "adaptation": {
+        "scale": "contain",
+        "anchor": "center"
+      },
+      "sha256": "80d3feede2d900e2f5405de1186b3e1d5ca6798d6108ef2d0a29c866ea32fdc0"
+    },
+    {
+      "id": "icon-002",
+      "name": "挑战成功率奖杯",
+      "file": "home/icon/icon-002.png",
+      "format": "png",
+      "size": [
+        29,
+        29
+      ],
+      "source_box": [
+        200,
+        284,
+        232,
+        316
+      ],
+      "trim_offset": [
+        1,
+        1
+      ],
+      "adaptation": {
+        "scale": "contain",
+        "anchor": "center"
+      },
+      "sha256": "4368aab4174d6183a3ebd6941c829f0f4c3ac5011e3b6d0e4d6da0a8e04dc1df"
+    },
+    {
+      "id": "icon-003",
+      "name": "能量闪电",
+      "file": "home/icon/icon-003.svg",
+      "format": "svg",
+      "size": [
+        18.4375,
+        28.125
+      ],
+      "source_box": [
+        350,
+        283,
+        375,
+        316
+      ],
+      "trim_offset": [
+        2.5,
+        2.5
+      ],
+      "adaptation": {
+        "scale": "contain",
+        "anchor": "center"
+      },
+      "sha256": "f7f3995de0a700ace148c49ae5dc63e1f1ff92baf077d05cd253705cab9f8536"
+    },
+    {
+      "id": "icon-004",
+      "name": "每日诗句日历",
+      "file": "home/icon/icon-004.svg",
+      "format": "svg",
+      "size": [
+        22.5,
+        22.4375
+      ],
+      "source_box": [
+        62,
+        374,
+        88,
+        400
+      ],
+      "trim_offset": [
+        1.75,
+        1.8125
+      ],
+      "adaptation": {
+        "scale": "contain",
+        "anchor": "center"
+      },
+      "sha256": "d4c7957ec3af737264b0ec203b534c3e00fa5373427873631ee7a38fcf1d7eca"
+    },
+    {
+      "id": "icon-005",
+      "name": "刷新",
+      "file": "home/icon/icon-005.svg",
+      "format": "svg",
+      "size": [
+        16.125,
+        15.5625
+      ],
+      "source_box": [
+        449,
+        375,
+        471,
+        398
+      ],
+      "trim_offset": [
+        3.875,
+        3.875
+      ],
+      "adaptation": {
+        "scale": "contain",
+        "anchor": "center"
+      },
+      "sha256": "dda042eef11d117509cf298001f8ba86d05b61190201d41c4ab896af89579964"
+    },
+    {
+      "id": "icon-006",
+      "name": "继续诗课书本",
+      "file": "home/icon/icon-006.png",
+      "format": "png",
+      "size": [
+        28,
+        22
+      ],
+      "source_box": [
+        63,
+        598,
+        93,
+        624
+      ],
+      "trim_offset": [
+        0,
+        2
+      ],
+      "adaptation": {
+        "scale": "contain",
+        "anchor": "center"
+      },
+      "sha256": "601005e9ef7ad1adbd1368bf4929750f235676f5358a77170f561b62db315c3d"
+    },
+    {
+      "id": "icon-007",
+      "name": "首页导航",
+      "file": "home/icon/icon-007.svg",
+      "format": "svg",
+      "size": [
+        26.0625,
+        26.25
+      ],
+      "source_box": [
+        135,
+        923,
+        169,
+        955
+      ],
+      "trim_offset": [
+        3.9375,
+        3.0625
+      ],
+      "adaptation": {
+        "scale": "contain",
+        "anchor": "center"
+      },
+      "sha256": "64b969d883c73e427055f9b81bde0a10e65e646d5b246cd27d8265d03b27cb9b"
+    },
+    {
+      "id": "icon-008",
+      "name": "我的导航",
+      "file": "home/icon/icon-008.svg",
+      "format": "svg",
+      "size": [
+        22.875,
+        24.125
+      ],
+      "source_box": [
+        365,
+        925,
+        395,
+        954
+      ],
+      "trim_offset": [
+        3.625,
+        1.8125
+      ],
+      "adaptation": {
+        "scale": "contain",
+        "anchor": "center"
+      },
+      "sha256": "baaef76517f0fe12a94950b9c0bb57430b023f6ff03928fe5a772ab78adc5ea0"
+    },
+    {
+      "id": "icon-009",
+      "name": "通用右箭头",
+      "file": "home/icon/icon-009.svg",
+      "format": "svg",
+      "size": [
+        7.375,
+        14.375
+      ],
+      "source_box": [
+        435,
+        654,
+        449,
+        675
+      ],
+      "trim_offset": [
+        3.3125,
+        3.3125
+      ],
+      "adaptation": {
+        "scale": "contain",
+        "anchor": "center"
+      },
+      "sha256": "a951ced7159bb561b61cfb250d6e47ef0de0fde02ed46afb22b94db19c2a6256"
+    },
+    {
+      "id": "icon-010",
+      "name": "能量右侧加号",
+      "file": "home/icon/icon-010.svg",
+      "format": "svg",
+      "size": [
+        11.375,
+        11.375
+      ],
+      "source_box": [
+        455,
+        292,
+        472,
+        309
+      ],
+      "trim_offset": [
+        2.8125,
+        2.8125
+      ],
+      "adaptation": {
+        "scale": "contain",
+        "anchor": "center"
+      },
+      "sha256": "5789ce0d6d73c1f3c3e31c7e94f2cbfccf2eacf841d486efa80a6bd169b3ea92"
+    }
+  ],
+  "preview_note": "图标背景透明，绿色等预览底色不属于图标素材。"
+}
